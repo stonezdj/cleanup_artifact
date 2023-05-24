@@ -107,6 +107,7 @@ func main() {
 
 func deleteArtifact(tag *Tag, hostname string, username string, password string) error {
 
+	tag.Repository = strings.Replace(tag.Repository, "/", "%252F", -1)
 	// Construct the URL for deleting the tag
 	url := fmt.Sprintf("https://%s/api/v2.0/projects/%s/repositories/%s/artifacts/%s/tags/%s", hostname, tag.ProjectName, tag.Repository, tag.Digest, tag.TagName)
 	log.Printf("Deleting tag from url: %s", url)
