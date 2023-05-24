@@ -18,7 +18,7 @@ from project p,
      repository r,
      artifact a,
      tag t
-where t.push_time < now() - interval '? week'
+where t.push_time < now() - interval '%d week'
   and t.repository_id = r.repository_id
   and r.project_id = p.project_id
   and a.id = t.artifact_id
