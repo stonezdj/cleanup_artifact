@@ -34,3 +34,10 @@ Usage of cleanup_artifact:
 
 ```
 
+Usage example:
+
+```
+    go run . -db_host=10.202.250.197 -harbor_host=10.202.250.197 -weeks=2 -dry_run=true
+```
+
+
